@@ -37,7 +37,8 @@ const upload = multer({
 // Serve frontend
 app.use(express.static(__dirname));
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 });
 // Plant identification endpoint
 app.post("/identify", upload.single("image"), async (req, res) => {
